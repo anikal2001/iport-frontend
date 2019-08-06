@@ -1,4 +1,5 @@
 <template>
+
    <v-layout align-center justify-space-around row fill-height> 
     <v-hover>
       <v-card
@@ -9,14 +10,15 @@
         id="UploadBar"
       >
       <form enctype="application/x-www-form-urlencoded" novalidate v-if="isInitial || isSaving">
-      <div class="uploadbutton" >
+      <div class="uploadbutton">
+      <h1 class="mx-auto mb-4">MMS Patrol Upload Video</h1>
       <input id="fileid" :name="uploadFieldName" type="file" :disabled="isSaving" multiple @change="NameOfFiles = $event.target.name; ListofFiles = $event.target.files;" >
-       <v-icon style="font-size:200px" >fas fa-file-upload</v-icon>
+       <v-icon class="mx-auto" style="font-size:200px" >fas fa-file-upload</v-icon>
         <v-card-title primary-title>
           <div>
             <span class="headline" style="padding:20px">Choose File(s) for Upload
             <p v-if="isSaving">
-              Uploading {{ fileCount }} files...
+              Uploading {{ ListofFiles.Length }} files...
             </p>
             </span>
             </div>
@@ -39,7 +41,7 @@
       </v-card>
       </v-hover>
       <v-card
-      v-if="ListofFiles.length>0"
+      v-if="ListofFiles.length>0 && !isSuccess"
       class="mx-auto ml-0 FileList"
       style="padding:20px;"
       :min-height="getheight()"
@@ -58,9 +60,10 @@
 </template>
 
 <script>
-  import { upload } from './file-upload.fake.service'; // fake service
-  // import { upload } from './file-upload.service';   // real service
+  //import { upload } from './file-upload.fake.service'; // fake service
+  import { upload } from './file-upload.service';   // real service
   import { wait } from './utils';
+  import menubar from './Menu_Bar.vue'
 
 const STATUS_INITIAL = 0, STATUS_SAVING = 1, STATUS_SUCCESS = 2, STATUS_FAILED = 3;
 export default {
@@ -74,6 +77,9 @@ export default {
         NameOfFiles: '',
         uploadFieldName: 'photos',
       }
+    },
+    components:{
+      menubar
     },
     computed: {
       isInitial() {
@@ -89,6 +95,7 @@ export default {
         return this.currentStatus === STATUS_FAILED;
       }
     },
+    
     methods: {
       reset() {
         // reset form to initial state
@@ -104,7 +111,7 @@ export default {
       save(formData) {
         // upload data to the server
         this.currentStatus = STATUS_SAVING;
-        upload(formData)
+        upload("iris-iport","item1", "./Downloads/careers 1.jpg" )
           .then(wait(1500)) // DEV ONLY: wait for 1.5s 
           .then(x => {
             this.uploadedFiles = [].concat(x);
@@ -128,10 +135,11 @@ export default {
         // save it
         this.save(formData);
       }
-    },
+    }, 
     mounted() {
       this.reset();
     },
+
 }
 </script>
 

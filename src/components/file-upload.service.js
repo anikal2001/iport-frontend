@@ -1,21 +1,22 @@
-import * as axios from 'axios';
+//import * as axios from 'axios';
+import fs from 'file-system'
 const AWS = require('ibm-cos-sdk');
 
 var config = {
-    endpoint: 'https://control.cloud-object-storage.cloud.ibm.com/v2/endpoints',
-    apiKeyId: 'Pvn3hBAk2X02kddJYZdEXj7pOjVxfkRACe0aKNTWXPcj',
+    endpoint: 's3.private.au-syd.cloud-object-storage.appdomain.cloud',
+    apiKeyId: 'UQ1jMPP_T3tkJXNb5Vuc0YSv0ku3_Ncm6fptMYcqvpUC',
     ibmAuthEndpoint: 'https://iam.cloud.ibm.com/identity/token',
-    serviceInstanceId: 'crn:v1:bluemix:public:cloud-object-storage:global:a/a11c69163e7c498e943418e9e5723fdb:749ed0b3-a74f-4d81-a88c-cc7bc3594240::',
+    serviceInstanceId: "crn:v1:bluemix:public:cloud-object-storage:global:a/a11c69163e7c498e943418e9e5723fdb:749ed0b3-a74f-4d81-a88c-cc7bc3594240::",
 };
 
 var cos = new AWS.S3(config);
-function multiPartUpload(bucketName, itemName, filePath) {
+function upload(bucketName, itemName, filePath) {
     var uploadID = null;
 
-    if (!fs.existsSync(filePath)) {
-        log.error(new Error(`The file \'${filePath}\' does not exist or is not accessible.`));
-        return;
-    }
+    //    if (!fs.getExists(filePath)) {
+    //        log.error(new Error(`The file \'${filePath}\' does not exist or is not accessible.`));
+    //        return;
+    //    }
 
     console.log(`Starting multi-part upload for ${itemName} to bucket: ${bucketName}`);
     return cos.createMultipartUpload({
@@ -31,10 +32,10 @@ function multiPartUpload(bucketName, itemName, filePath) {
             var partSize = 1024 * 1024 * 5;
             var partCount = Math.ceil(fileData.length / partSize);
 
-            async.timesSeries(partCount, (partNum, next) => {
+              const timesSeries = (partCount, async (partNum, next)  => {
                 var start = partNum * partSize;
                 var end = Math.min(start + partSize, fileData.length);
-
+                
                 partNum++;
 
                 console.log(`Uploading to ${itemName} (part ${partNum} of ${partCount})`);  
@@ -85,19 +86,19 @@ function cancelMultiPartUpload(bucketName, itemName, uploadID) {
         console.log(`Multi-part upload aborted for ${itemName}`);
     })
     .catch((e)=>{
-        console.error(`ERROR: ${e.code} - ${e.message}\n`);
+        console.error(`ERROR: ${e.code} - ${e.message} + ${e.error}\n`);
     });
 }
-const BASE_URL = 'http://localhost:8080';
+// const BASE_URL = 'http://localhost:8080';
 
-function upload(formData) {
-    const url = `${BASE_URL}/photos/upload`;
-    return axios.post(url, formData)
-        // get data
-        .then(x => x.data)
-        // add url field
-        .then(x => x.map(img => Object.assign({},
-            img, { url: `${BASE_URL}/images/${img.id}` })));
-}
+// function upload(formData) {
+//     const url = `${BASE_URL}/photos/upload`;
+//     return axios.post(url, formData)
+//         // get data
+//         .then(x => x.data)
+//         // add url field
+//         .then(x => x.map(img => Object.assign({},
+//             img, { url: `${BASE_URL}/images/${img.id}` })));
+// }
 
 export { upload }
