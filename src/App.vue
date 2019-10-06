@@ -7,15 +7,11 @@
 </template>
 
 <script>
-import uploadvideo from './components/Upload_Video.vue'
-import loginpage from './components/Login_Page.vue'
 import menubar from './components/Menu_Bar.vue'
 
 export default {
   name: 'app',
   components: {
-    uploadvideo,
-    loginpage,
     menubar
   },
   data() {

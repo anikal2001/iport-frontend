@@ -1,0 +1,77 @@
+{
+    "services": {
+      "databases-for-mongodb": [
+        {
+          "credentials": {
+            "connection": {
+              "cli": {
+                "arguments": [
+                  [
+                    "-u",
+                    "ibm_cloud_998e0f7c_a700_461d_a21f_e7f7b0615bcd",
+                    "-p",
+                    "13322b3294fd419db8f2e2b5c2b48beb2bf8763c0edf5a47f11f6384f7d2d2f8",
+                    "--ssl",
+                    "--sslCAFile",
+                    "397a5ce7-0e87-11e9-89d4-daf94e02f48d",
+                    "--authenticationDatabase",
+                    "admin",
+                    "--host",
+                    "replset/3ba3ac84-ccf0-4cd5-810e-edc52bed0a8a-0.22868e325a8b40b6840ed9895f3bb023.databases.appdomain.cloud:32321,3ba3ac84-ccf0-4cd5-810e-edc52bed0a8a-1.22868e325a8b40b6840ed9895f3bb023.databases.appdomain.cloud:32321"
+                  ]
+                ],
+                "bin": "mongo",
+                "certificate": {
+                  "certificate_base64": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURIVENDQWdXZ0F3SUJBZ0lVVG5ycXVPc3N3bHJ0SFBHYkFLNW5IUGZXNHI4d0RRWUpLb1pJaHZjTkFRRUwKQlFBd0hqRWNNQm9HQTFVRUF3d1RTVUpOSUVOc2IzVmtJRVJoZEdGaVlYTmxjekFlRncweE9ERXlNVGd4TVRBMApNelphRncweU9ERXlNVFV4TVRBME16WmFNQjR4SERBYUJnTlZCQU1NRTBsQ1RTQkRiRzkxWkNCRVlYUmhZbUZ6ClpYTXdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCQVFDNHhQUEFnTy9vUjRMbCtBdC8KbjBaTlVuMEFFeUliK2Vra0RrZU1ERVdPYXZVbEpsWkF4N3BTeEI5QjdkQkZGTzVaY2dheWpFZU9aZUFMeUlXdwp4Q3VuYjZpZTVudVdkc0tHREJQTk5wYlVlaGZjWkd2Rnp6TVV6eVU0S1YyZ2k3MUFBcE15c2pVT2tHNW9xaTBRCnJNK0plSkpFQnIzd21SVVVXd0lLOEZDSitqWG9rakw2YmRaYXNkUXAwWEpUVzNFeVBQTlZCMllWTFhTMjYxdzQKMk5SNW04TXlWRXRaZlNXNThmaXd6dWszMHdoNUYxWVpLZGRZc1dXNVQvTVFvVXBDYW1yL0F6QXpRb3Q1Z1FwcQo5aUFZbUFNbmhGOVRjNXIreGpuZlp3WVd1dkJhZnQyWmRTL3VVMzdObVAxSjJaWmFqSmdEN1ZLd3hZb3ZKQmM4ClpIM0RBZ01CQUFHalV6QlJNQjBHQTFVZERnUVdCQlJPbzdXdkZwYWJyYStWUm1wdEcrYTdtazMwL0RBZkJnTlYKSFNNRUdEQVdnQlJPbzdXdkZwYWJyYStWUm1wdEcrYTdtazMwL0RBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUEwRwpDU3FHU0liM0RRRUJDd1VBQTRJQkFRQnpCVmVpci9NV1MxclFuT29QVkx2bHlVZ1F1NGFiSzZXaWxTZk04TGc5CkJRaVRUUVE1aERNeFBqN3FpU2MvN0tQUFFQMDlxY2w5RmJYb2tGRGlnL1oxZUhRcExWdzJPenh5Uy9qemV5N04KakhuSVFFOUo4VXRiWnZicG9jYXVFcXhEZS9rS3dSNmhWbHArb3BRNkw3ZDY0UjhwNUExSGx1SlR6NUM3TytMYQpTVUxOMDQzU2g3VjdmYXN0V3loTy9IaDVrWWg3WFRZSEdINTI1bGVwRW5mM0JtMjROenZ5TVpBOTBLczlrN2FXCkJ3V1ZSNE9tTU1hNHp3ZlFtay9la2Iwcm55UzZMcmhMWEd4MTc0Z0pUQ0JkWGRZMlNrVlo5aGxvRHNFVmlkLzEKVmZuc1pxMm54d0txalM2dnpNSVVQOFBWcHJUZ09SQ25sc0hManFBVUJadjgKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
+                  "name": "397a5ce7-0e87-11e9-89d4-daf94e02f48d"
+                },
+                "composed": [
+                  "mongo -u ibm_cloud_998e0f7c_a700_461d_a21f_e7f7b0615bcd -p 13322b3294fd419db8f2e2b5c2b48beb2bf8763c0edf5a47f11f6384f7d2d2f8 --ssl --sslCAFile 397a5ce7-0e87-11e9-89d4-daf94e02f48d --authenticationDatabase admin --host replset/3ba3ac84-ccf0-4cd5-810e-edc52bed0a8a-0.22868e325a8b40b6840ed9895f3bb023.databases.appdomain.cloud:32321,3ba3ac84-ccf0-4cd5-810e-edc52bed0a8a-1.22868e325a8b40b6840ed9895f3bb023.databases.appdomain.cloud:32321"
+                ],
+                "environment": {},
+                "type": "cli"
+              },
+              "mongodb": {
+                "authentication": {
+                  "method": "direct",
+                  "password": "13322b3294fd419db8f2e2b5c2b48beb2bf8763c0edf5a47f11f6384f7d2d2f8",
+                  "username": "ibm_cloud_998e0f7c_a700_461d_a21f_e7f7b0615bcd"
+                },
+                "certificate": {
+                  "certificate_base64": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURIVENDQWdXZ0F3SUJBZ0lVVG5ycXVPc3N3bHJ0SFBHYkFLNW5IUGZXNHI4d0RRWUpLb1pJaHZjTkFRRUwKQlFBd0hqRWNNQm9HQTFVRUF3d1RTVUpOSUVOc2IzVmtJRVJoZEdGaVlYTmxjekFlRncweE9ERXlNVGd4TVRBMApNelphRncweU9ERXlNVFV4TVRBME16WmFNQjR4SERBYUJnTlZCQU1NRTBsQ1RTQkRiRzkxWkNCRVlYUmhZbUZ6ClpYTXdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCQVFDNHhQUEFnTy9vUjRMbCtBdC8KbjBaTlVuMEFFeUliK2Vra0RrZU1ERVdPYXZVbEpsWkF4N3BTeEI5QjdkQkZGTzVaY2dheWpFZU9aZUFMeUlXdwp4Q3VuYjZpZTVudVdkc0tHREJQTk5wYlVlaGZjWkd2Rnp6TVV6eVU0S1YyZ2k3MUFBcE15c2pVT2tHNW9xaTBRCnJNK0plSkpFQnIzd21SVVVXd0lLOEZDSitqWG9rakw2YmRaYXNkUXAwWEpUVzNFeVBQTlZCMllWTFhTMjYxdzQKMk5SNW04TXlWRXRaZlNXNThmaXd6dWszMHdoNUYxWVpLZGRZc1dXNVQvTVFvVXBDYW1yL0F6QXpRb3Q1Z1FwcQo5aUFZbUFNbmhGOVRjNXIreGpuZlp3WVd1dkJhZnQyWmRTL3VVMzdObVAxSjJaWmFqSmdEN1ZLd3hZb3ZKQmM4ClpIM0RBZ01CQUFHalV6QlJNQjBHQTFVZERnUVdCQlJPbzdXdkZwYWJyYStWUm1wdEcrYTdtazMwL0RBZkJnTlYKSFNNRUdEQVdnQlJPbzdXdkZwYWJyYStWUm1wdEcrYTdtazMwL0RBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUEwRwpDU3FHU0liM0RRRUJDd1VBQTRJQkFRQnpCVmVpci9NV1MxclFuT29QVkx2bHlVZ1F1NGFiSzZXaWxTZk04TGc5CkJRaVRUUVE1aERNeFBqN3FpU2MvN0tQUFFQMDlxY2w5RmJYb2tGRGlnL1oxZUhRcExWdzJPenh5Uy9qemV5N04KakhuSVFFOUo4VXRiWnZicG9jYXVFcXhEZS9rS3dSNmhWbHArb3BRNkw3ZDY0UjhwNUExSGx1SlR6NUM3TytMYQpTVUxOMDQzU2g3VjdmYXN0V3loTy9IaDVrWWg3WFRZSEdINTI1bGVwRW5mM0JtMjROenZ5TVpBOTBLczlrN2FXCkJ3V1ZSNE9tTU1hNHp3ZlFtay9la2Iwcm55UzZMcmhMWEd4MTc0Z0pUQ0JkWGRZMlNrVlo5aGxvRHNFVmlkLzEKVmZuc1pxMm54d0txalM2dnpNSVVQOFBWcHJUZ09SQ25sc0hManFBVUJadjgKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
+                  "name": "397a5ce7-0e87-11e9-89d4-daf94e02f48d"
+                },
+                "composed": [
+                  "mongodb://ibm_cloud_998e0f7c_a700_461d_a21f_e7f7b0615bcd:13322b3294fd419db8f2e2b5c2b48beb2bf8763c0edf5a47f11f6384f7d2d2f8@3ba3ac84-ccf0-4cd5-810e-edc52bed0a8a-0.22868e325a8b40b6840ed9895f3bb023.databases.appdomain.cloud:32321,3ba3ac84-ccf0-4cd5-810e-edc52bed0a8a-1.22868e325a8b40b6840ed9895f3bb023.databases.appdomain.cloud:32321/ibmclouddb?authSource=admin&replicaSet=replset"
+                ],
+                "database": "ibmclouddb",
+                "hosts": [
+                  {
+                    "hostname": "3ba3ac84-ccf0-4cd5-810e-edc52bed0a8a-0.22868e325a8b40b6840ed9895f3bb023.databases.appdomain.cloud",
+                    "port": 32321
+                  },
+                  {
+                    "hostname": "3ba3ac84-ccf0-4cd5-810e-edc52bed0a8a-1.22868e325a8b40b6840ed9895f3bb023.databases.appdomain.cloud",
+                    "port": 32321
+                  }
+                ],
+                "path": "/ibmclouddb",
+                "query_options": {
+                  "authSource": "admin",
+                  "replicaSet": "replset"
+                },
+                "replica_set": "replset",
+                "scheme": "mongodb",
+                "type": "uri"
+              }
+            },
+            "instance_administration_api": {
+              "deployment_id": "crn:v1:bluemix:public:databases-for-mongodb:au-syd:a/a11c69163e7c498e943418e9e5723fdb:3ba3ac84-ccf0-4cd5-810e-edc52bed0a8a::",
+              "instance_id": "crn:v1:bluemix:public:databases-for-mongodb:au-syd:a/a11c69163e7c498e943418e9e5723fdb:3ba3ac84-ccf0-4cd5-810e-edc52bed0a8a::",
+              "root": "https://api.au-syd.databases.cloud.ibm.com/v4/ibm"
+            }
+          }
+        }
+      ]
+    }
+   }
