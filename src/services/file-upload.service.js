@@ -3,8 +3,8 @@ import { wait } from '../components/utils';
 
 
 function getSignedurl(files) {
-
-  var urlobject = []
+  wait(3600)
+  urlobject= []
   axios.get('http://localhost:5000/api/videos/upload/generatepresignedurl')
     .then( function (response) {
       urlobject = response.data.urls
